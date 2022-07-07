@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Index page</title>
+</head>
+<body>
+    Hello ANd Namastey!!<br><br><br>
+    <hr>
+    {% for note in notes %}
+    <a href="{% url 'base-page' note.id %}">{{note.name}}</a><br>
+    {{note.id}}<br>
+    {{note.description}}<br>
+
+    <a href="{% url 'update_form-page' note.id %}">Update</a><br>
+    <a href="{% url 'delete' note.id %}">Delete</a><br>
+    <hr>
+
+    {% endfor %}
+    
+</body>
+</html>
